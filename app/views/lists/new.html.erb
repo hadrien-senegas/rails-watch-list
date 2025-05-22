@@ -1,0 +1,10 @@
+<div class="container p-4">
+
+<h1>create a list <%= @list.name %></h1>
+
+<%= simple_form_for [@list] do |f| %>
+  <%= f.input :name %>
+  <%= f.button :submit, class: "btn btn-primary"%>
+<% end %>
+<p><%= link_to "Home", lists_path, class: "btn btn-primary" %></p>
+</div>

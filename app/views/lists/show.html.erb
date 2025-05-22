@@ -1,0 +1,19 @@
+<div class="container p-4">
+
+<h1><%= @list.name %></h1>
+
+<h2>Bookmarks</h2>
+<div class="container">
+<ul class="row">
+  <% @list.bookmarks.each do |bookmark| %>
+    <li class="col">
+      <%= bookmark.movie.title %></strong> - <%= bookmark.comment %>
+      <%= link_to 'Delete', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add a bookmark', new_list_bookmark_path(@list), class: "btn btn-primary m-1" %>
+<p><%= link_to "Back home", lists_path, class: "btn btn-primary m-1" %></p>
+</div>
+</div>
